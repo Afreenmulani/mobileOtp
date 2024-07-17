@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile OTP Verification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   <div class="container">
+    <h2>Mobile OTP Verification</h2>
+    <div id="sender">
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Name">
+        
+        <label for="gender">Gender</label>
+        <select id="gender">
+            <option value="" disabled selected>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob">
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Email">
+        
+        <label for="address">Address</label>
+        <input type="text" id="address" placeholder="Address">
+        
+        <label for="number">Phone Number</label>
+        <input type="text" id="number" placeholder="+923..">
+        
+        <div id="recaptcha-container"></div>
+        <button id="send" onclick="phoneAuth()">Send</button>  
+    </div>
+    <div id="verifier" style="display: none;">
+        <label for="verificationcode">OTP Code</label>
+        <input type="text" id="verificationcode" placeholder="OTP code">
+        <button id="verify" onclick="codeverify()">Verify</button>
+        <div class="p-conf">Number Verified</div>
+        <div class="n-conf">OTP ERROR</div>
+    </div>
+   </div> 
+   <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+   <script src="scripts.js"></script>
+</body>
+</html>
